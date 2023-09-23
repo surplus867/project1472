@@ -43,12 +43,23 @@ class MainActivity : ComponentActivity() {
                 Image(
                     painter = painterResource(id = R.drawable.top_background),
                     contentDescription = null,
-                    modifier = Modifier
+                    Modifier
                         .fillMaxWidth()
                         .constrainAs(topImg) {
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
                         })
+
+                Image(
+                        painter = painterResource(id = R.drawable.profile),
+                contentDescription = null,
+                Modifier
+                    .constrainAs(profile) {
+                        top.linkTo(topImg.bottom)
+                        bottom.linkTo(topImg.bottom)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                    })
             }
         }
     }
